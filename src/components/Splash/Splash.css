@@ -1,48 +1,56 @@
-/* src/components/Splash.css */
 .splash-container {
-  position: absolute; /* Use absolute to ensure it overlays correctly */
-  width: 100vw;
-  height: 100vh;
+  position: fixed; /* Full screen coverage */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #ec7700 0%, #ce000e 100%);
   overflow: hidden;
-  background-color: #f0f0f0; /* Initial background color */
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999; /* High z-index to ensure it overlays the content */
-  transition: opacity 1s;
+  transition: opacity 0.5s ease-out; /* Smooth transition for background */
+  pointer-events: none;
 }
 
-.text-container {
-  position: absolute;
+.splash-container.hidden {
+  opacity: 0; /* Hide splash screen by fading out */
+}
+
+.image-container {
+  position: relative;
   display: flex;
-  width: 35%; /* Adjust as needed */
-  max-width: 450px; /* Adjust as needed */
-  justify-content: space-between;
-  align-items: center; /* Center items vertically */
+  flex-direction: column; /* Stack images vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  width: 45%;
+  max-width: 450px;
+  z-index: 1; /* Ensure images are above the background */
 }
 
-.text-left,
-.text-right {
-  font-size: 3rem; /* Adjust as needed */
-  font-family: Arial, sans-serif;
-  white-space: nowrap; /* Prevent text from wrapping */
+.image-left,
+.image-right {
+  width: 350px; /* Adjust size as necessary */
+  height: auto; /* Maintain aspect ratio */
+  opacity: 1; /* Visible initially */
 }
 
-.text-left {
-  animation: flyInFromLeft 2s forwards, stayInCenter 2s 2s forwards, flyOutToLeft 2s 4s forwards;
+.image-left {
+  animation: flyInFromLeft 1s forwards, stayInCenter 0.75s 1s forwards, flyOutToLeft 1s 1.75s forwards; /* Adjusted durations */
 }
 
-.text-right {
-  animation: flyInFromRight 2s forwards, stayInCenter 2s 2s forwards, flyOutToRight 2s 4s forwards;
+.image-right {
+  animation: flyInFromRight 1s forwards, stayInCenter 0.75s 1s forwards, flyOutToRight 1s 1.75s forwards; /* Adjusted durations */
 }
 
 .content {
-  position: relative; /* Change to relative if needed */
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  transition: opacity 1s;
+  transition: opacity 0.5s;
 }
 
 .show-content {

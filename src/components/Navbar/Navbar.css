@@ -1,0 +1,110 @@
+/* Global styles to prevent scrolling */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+  height: 100%;
+  width: 100%;
+}
+
+/* Navbar Container */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #DC3707; /* Base color */
+  background: linear-gradient(to right, #ec7700 0%, #ce000e 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  width: 100%;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+  position: relative; /* Required for absolute positioning of the mobile menu */
+}
+
+/* Logo */
+.logo img {
+  width: 150px; /* Adjust size as needed */
+  margin-bottom: 20px;
+}
+
+/* Menu List */
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 30px; /* Space between menu items */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Menu Items */
+.menu li {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #FFFFFF; /* White text color */
+  transition: color 0.3s, transform 0.3s;
+  padding: 10px 15px; /* Padding around the text */
+  border-radius: 5px; /* Rounded corners for links */
+}
+
+.menu li a:hover {
+  color: #FFEB3B; /* Change to your preferred hover color */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none; /* Hidden by default, shown on mobile */
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: #FFFFFF;
+}
+
+/* Mobile Menu Styles */
+.menu.active {
+  display: block;
+  position: absolute;
+  top: 70px; /* Adjust based on logo height */
+  right: 0;
+  width: 100%;
+  background: #DC3707; /* Match navbar background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Same shadow as navbar */
+  transition: max-height 0.3s ease-in-out;
+  max-height: 0; /* Initially hidden */
+  overflow: hidden; /* Hide overflow */
+}
+
+.menu.active {
+  max-height: 500px; /* Adjust to fit menu items; ensure it's enough to show all items */
+}
+
+.menu li {
+  display: block; /* Stack menu items vertically */
+  text-align: center; /* Center text */
+}
+
+.menu li a {
+  display: block; /* Full width links for mobile */
+  padding: 15px 20px; /* Adjust padding for mobile */
+  border-radius: 0; /* Remove rounded corners for mobile */
+  font-size: 20px; /* Larger font size for readability */
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  .menu {
+    display: none; /* Hide menu on mobile by default */
+  }
+  
+  .menu-toggle {
+    display: block; /* Show hamburger icon on mobile */
+  }
+}

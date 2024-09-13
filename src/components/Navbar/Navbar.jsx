@@ -23,6 +23,7 @@ const Navbar = () => {
         <li><a href="#products">商品紹介</a></li>
         <li><a href="#testimonials">お客様の声</a></li>
         <li><a href="#advice">専門家からのアドバイス</a></li>
+        <li><a href="#advice">お問い合わせ</a></li>
       </ul>
     </nav>
   );

@@ -1,29 +1,32 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../../assets/logo.png';
-import { FaBars, FaTimes } from 'react-icons/fa'; // Import hamburger and close icons
+import { FaBars, FaTimes } from 'react-icons/fa'; 
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen(prevState => !prevState);
   };
 
   return (
     <nav className="navbar">
       <div className="logo">
-        <img src={logo} alt="Logo" />
+        <Link to="/">
+          <img src={logo} alt="Logo" />
+        </Link>
       </div>
-      <div className="menu-toggle" onClick={toggleMenu}>
+      <div className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
         {isMenuOpen ? <FaTimes /> : <FaBars />}
       </div>
       <ul className={`menu ${isMenuOpen ? 'active' : ''}`}>
-        <li><a href="#next18">Next18 Proteinについて</a></li>
-        <li><a href="#products">商品紹介</a></li>
-        <li><a href="#testimonials">お客様の声</a></li>
-        <li><a href="#advice">専門家からのアドバイス</a></li>
-        <li><a href="#advice">お問い合わせ</a></li>
+        <li><Link to="#next18">Next18 Proteinについて</Link></li>
+        <li><Link to="#products">商品紹介</Link></li>
+        <li><Link to="#testimonials">お客様の声</Link></li>
+        <li><Link to="#advice">専門家からのアドバイス</Link></li>
+        <li><Link to="/contact">お問い合わせ</Link></li>
       </ul>
     </nav>
   );

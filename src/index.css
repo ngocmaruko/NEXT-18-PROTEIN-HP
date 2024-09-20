@@ -3,7 +3,7 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden; /* Prevent horizontal scrollbar */
-  overflow-y: hidden; /* Prevent vertical scrollbar */
+
   height: 100%;
   width: 100%;
   font-family: 'Roboto Condensed', 
@@ -88,4 +88,38 @@ code {
   h4 {
     font-size: 1rem; /* 16px */
   }
+}
+
+.container{
+  max-width: 1200px; /* or your preferred width */
+  width: 90%; /* adjusts for smaller screens */
+  margin: 0 auto; /* centers the content */
+  padding: 20px; /* adds some spacing */
+}
+@media (max-width: 768px) {
+  .container {
+      max-width: 90%; /* More flexible on smaller screens */
+  }
+  button {
+    width: 80%;
+    max-width: none;
+  }
+}
+
+button {
+  width: 40%; /* Adjust width */
+  max-width: 160px; /* Maximum width */
+  padding: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(to right, #ec7700 0%, #ce000e 100%);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  margin: 20px auto; /* Center the button */
+  display: block; /* Block display to center */
+}
+button:hover {
+  transform: scale(1.05); /* Scale effect on hover */
 }

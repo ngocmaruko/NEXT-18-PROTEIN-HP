@@ -1,0 +1,53 @@
+.confirmation-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items */
+}
+
+h2 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+h3 {
+  text-align: center;
+  margin: 5px 0;
+  color: #555; /* Optional: color for the subtitle */
+}
+
+.confirmation-details {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  width: 100%;
+}
+
+.confirmation-details p {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #333;
+}
+
+button:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+  .confirmation-container {
+    padding: 10px; /* Reduce padding */
+  }
+  .confirmation-details p {
+    font-size: 14px; /* Adjust font size for details */
+  }
+
+  button {
+    width: 80%; /* Increase button width on small screens */
+    max-width: none; /* Remove max-width for button */
+  }
+}

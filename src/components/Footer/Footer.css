@@ -1,0 +1,96 @@
+.foot {
+  padding: 20px; /* Add padding */
+  background-color: #f8f8f8; /* Light background color */
+  border-top: 1px solid #ddd; /* Optional border on top */
+}
+
+.footer-container {
+  display: flex;
+  width: 100%;
+}
+
+.footer-column {
+  flex: 1; /* Equal width for both columns */
+  padding: 10px; /* Padding inside columns */
+}
+.box{
+  max-width: 1100px; /* Maximum width for footer content */
+  margin: 0 auto;
+}
+.logo-column {
+  max-width: 300px; /* Limit width for the logo column */
+}
+
+.links-column {
+  display: flex;
+  flex-wrap: wrap; /* Allow links to wrap */
+  text-align: left; /* Align text to the left */
+}
+
+.link-group {
+  flex: 1; /* Each link group takes equal space */
+  padding: 5px;
+  font-weight: 600;
+}
+
+.link-group li {
+  margin: 5px 0; /* Spacing between link items */
+  color: #333; /* Darker text color for readability */
+  text-align: left; /* Ensure text in link group is left-aligned */
+}
+
+.address p {
+  margin: 0; /* Remove default margins */
+  color: #555; /* Lighter color for address text */
+}
+
+.submenu {
+  font-weight: 400;
+}
+
+.copyright-background {
+  width: 100%; /* Full width for the copyright background */
+  background: linear-gradient(to right, #ec7700 0%, #ce000e 100%); /* Gradient background */
+}
+
+.copyright {
+  width: 100%; /* Full width for the copyright text */
+  text-align: center; /* Center the copyright text */
+  padding: 10px 0; /* Padding for the copyright section */
+  color: #fff; /* Change text color to white for better contrast */
+}
+.copyright p{
+  font-size: 12px;
+}
+.foot .logo img{
+  margin-bottom: 0;
+}
+
+/* Media query to hide links-column and center the logo/address on smaller screens */
+@media screen and (max-width: 768px) {
+  .links-column {
+    display: none; /* Hide the links column on smaller screens */
+  }
+
+  .footer-container {
+    justify-content: center; /* Center content horizontally */
+  }
+
+  .logo-column {
+    max-width: 100%; /* Allow the logo column to take full width */
+    text-align: center; /* Center text (logo and address) */
+  }
+
+  .address {
+    text-align: center; /* Center the address text */
+  }
+  .address p{
+    font-size: 12px;
+  }
+  .logo img {
+    margin: 0 auto; /* Center the logo image */
+  }
+  .copyright p {
+    font-size: 12px;
+  }
+}

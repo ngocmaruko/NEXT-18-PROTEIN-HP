@@ -1,9 +1,21 @@
-/* Reset and Base Styles */
+/* ==================================
+   Reset and Base Styles
+   ================================== */
+
+/* Universal reset to remove default margin, padding, and border-box model */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HTML & Body Styling */
 html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden; /* Prevent horizontal scrollbar */
-
   height: 100%;
   width: 100%;
   font-family: 'Roboto Condensed', 
@@ -19,92 +31,61 @@ html, body {
                'ＭＳ Ｐゴシック', 
                'MS PGothic', 
                sans-serif;
-  font-size: 16px; /* Adjust as needed */
   line-height: 1.5; /* Adjust as needed */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px; /* Base font size */
+  color: #333; /* Default text color */
+
 }
 
-/* Body Specifics */
-body {
-  margin: 0; /* Remove default margin */
+/* ==================================
+   Typography - Headings, Paragraphs, and Links
+   ================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
 }
 
-/* Headings */
-h1, h2, h3, h4 {
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p {
+  font-size: 1rem; /* Default paragraph size */
+  line-height: 1.6;
 }
 
-/* Spacing */
-h1 {
-  margin-bottom: 1.5rem; /* Adjust spacing between headings */
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.2s ease-in;
 }
 
-h2 {
-  margin-bottom: 1.25rem; /* Adjust spacing between headings */
+a:hover {
+  color: #0056b3;
 }
 
-h3 {
-  margin-bottom: 1rem; /* Adjust spacing between headings */
+/* ==================================
+   List Styles
+   ================================== */
+
+ul, ol {
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 0;
 }
 
-h4 {
-  margin-bottom: 0.75rem; /* Adjust spacing between headings */
+ul li, ol li {
+  margin-bottom: 0.75rem; /* Add spacing between list items */
 }
 
-/* Code Styling */
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
-/* General Utility Classes */
-.container {
-  padding: 1rem; /* Example padding for main container */
-}
-
-.text-small {
-  font-size: 0.875rem; /* 14px */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  body {
-    font-size: 14px; /* Adjust for smaller screens */
-  }
-
-  h1 {
-    font-size: 1.75rem; /* 28px */
-  }
-
-  h2 {
-    font-size: 1.5rem; /* 24px */
-  }
-
-  h3 {
-    font-size: 1.25rem; /* 20px */
-  }
-
-  h4 {
-    font-size: 1rem; /* 16px */
-  }
-}
-
-.container{
-  max-width: 1200px; /* or your preferred width */
-  width: 90%; /* adjusts for smaller screens */
-  margin: 0 auto; /* centers the content */
-  padding: 20px; /* adds some spacing */
-}
-@media (max-width: 768px) {
-  .container {
-      max-width: 90%; /* More flexible on smaller screens */
-  }
-  button {
-    width: 80%;
-    max-width: none;
-  }
-}
+/* ==================================
+   Buttons
+   ================================== */
 
 button {
   width: 40%; /* Adjust width */
@@ -120,6 +101,125 @@ button {
   margin: 20px auto; /* Center the button */
   display: block; /* Block display to center */
 }
+
 button:hover {
   transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* ==================================
+   Form Elements
+   ================================== */
+
+input, textarea, select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+textarea {
+  resize: vertical; /* Allow only vertical resizing */
+}
+
+label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  display: block;
+}
+
+/* ==================================
+   Tables
+   ================================== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+th, td {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+
+
+/* ==================================
+   Horizontal Rule
+   ================================== */
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 2rem 0;
+}
+
+/* ==================================
+   Utility Classes
+   ================================== */
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mt-1 { margin-top: 1rem; }
+.mb-1 { margin-bottom: 1rem; }
+.pt-1 { padding-top: 1rem; }
+.pb-1 { padding-bottom: 1rem; }
+
+/* ==================================
+   Layout Containers
+   ================================== */
+
+.container {
+  max-width: 1200px;
+  width: 90%; /* Adjusts for smaller screens */
+  margin: 0 auto; /* Centers content */
+  padding: 20px; /* Adds some spacing */
+}
+
+/* Adjust container width for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+  }
+
+  button {
+    width: 80%;
+    max-width: none;
+  }
+}
+
+/* ==================================
+   Responsive Design Breakpoints
+   ================================== */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Adjust base font size for smaller screens */
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  h4, p {
+    font-size: 1rem;
+  }
 }

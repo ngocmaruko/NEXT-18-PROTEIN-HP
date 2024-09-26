@@ -79,9 +79,6 @@ ul, ol {
   margin: 0;
 }
 
-ul li, ol li {
-  margin-bottom: 0.75rem; /* Add spacing between list items */
-}
 
 /* ==================================
    Buttons
